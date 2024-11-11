@@ -19,7 +19,8 @@ def login_s(user, password):
     db.close()
     
     return {"access_token": create_access_token({"sub": user_db.username,
-                                "rol": rol,
-                                "email": user_db.email}), "token_type": "bearer"}
+                                                 "rol": rol,
+                                                 "email": user_db.email}), 
+            "token_type": "bearer"}
 
         

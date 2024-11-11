@@ -22,6 +22,8 @@ class Users(Base):
     email = Column(String(100), index=True, unique=True, nullable=False)
     rol_id = Column(Integer, ForeignKey('roles.id'))  
     
-
     rol = relationship("Roles", back_populates="users")  
+    admin = relationship("AssignedReward", back_populates="admin")
+    adminn = relationship("EventAssigned", back_populates="admin")
+
    
