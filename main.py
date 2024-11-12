@@ -15,6 +15,4 @@ app.include_router(rewards.router)
 async def home():
     return {"Welcome" :  "this a home"}
 
-if __name__ == "__main__":
-    init_db()
-    os.system("uvicorn main:app --reload")
+init_db()
