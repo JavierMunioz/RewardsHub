@@ -4,7 +4,7 @@ from schemas.user import UserCreate
 from services.user import create_user_s
 
 router = APIRouter(prefix='/user', tags=['user'])
-
+#, current_user: dict = Depends(get_current_user)
 @router.post('/create')
-async def create_user(user: UserCreate, current_user: dict = Depends(get_current_user)):
+async def create_user(user: UserCreate):
     return create_user_s(user)
