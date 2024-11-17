@@ -14,7 +14,7 @@ def login_s(user, password):
     if not verify_hash(password=password, hash=user_db.password):
         raise HTTPException(status_code=401, detail="Credenciales incorrectas")
 
-    rol = user_db.rol.name
+    rol = user_db.rol.id
 
     db.close()
     
